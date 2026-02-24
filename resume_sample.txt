@@ -1,0 +1,36 @@
+Kiki Ajayi
+Phone Number: 5854719518 | Email: kia3839@rit.edu | Address: 5414 Rouchel Brook Lane, Sugarland, TX, 77479
+OBJECTIVE
+Analytical thinker seeking a co-op for Summer 2026 in software engineering or related computer science roles
+EDUCATION
+Rochester Institute of Technology | Rochester, NY Bachelor of Science in Computer Science Bachelor of Science in Economics
+Relevant Courses: Computer Science Theory, Mechanics of Programming, Probability and Statistics, Analysis of Algorithms
+Expected May ‘29
+GPA: 3.43
+SKILLS
+Programming Languages: Python, Java, C, HTML, CSS | Software: Microsoft Excel, GitHub
+PROJECTS Oct ‘25 – Nov ‘25
+Wildfire Simulation
+• Implemented a 2D cellular automaton wildfire simulation in C modeling state transitions across a configurable grid
+• Modeled multi-cycle burn behavior and neighbor-driven ignition dynamics using finite-state logic
+• Collected cycle-level metrics and state changes to analyze system behavior and support controlled experimentation
+WORK EXPERIENCE
+RIT Housing | Rochester, NY Nov ‘24 – Current
+Student Manager
+• Lead and supervise a team of student ambassadors, train new hires on tour delivery and operational procedures.
+• Optimize 140+ students' experiences through strategic collaboration with Housing Operations and maintenance teams at RIT
+to expedite issue resolution.
+• Streamlined communication workflows by resolving 200+ student inquiries, contributing to faster, data-backed service
+delivery.
+RIT Residence Life | Rochester, NY Aug ‘25 – Current
+Resident Advisor
+• Applied analytical thinking and clear communication to mediate and resolve conflicts and enforce policies
+• Planned and executed community-building programs and events, managing logistics, promotion, and attendance in
+collaboration across multiple teams.
+• Balance administrative responsibilities with crisis response, documentation, and ongoing resident engagement
+Golisano College of Computing and Information Sciences | Rochester, NY. Student Ambassador
+Mar ‘25 – Current
+• Presented RIT’s computing programs to prospective students, adapting communication styles for technical and non-technical
+audiences.
+• Inspire various prospective students with personal academic experiences to facilitate informed decision-making.
+• Strengthen public speaking and interpersonal communication skills through one-on-one and group interactions.
