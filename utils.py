@@ -1,6 +1,6 @@
 # @Author: Kiki Ajayi
 
-def readFile(filename):
+def read_file(filename):
     '''
     Reads a file and stores the content
 
@@ -22,4 +22,17 @@ def readFile(filename):
     if content.strip() == "":
         raise ValueError("File is empty!")
     
+    return content
+
+def clean_text(content):
+    '''
+    Standardize text by making all lowercase and removing all leading and trailing whitespace
+
+    Arg(s):
+        content: content of the file
+
+    Returns:
+        Standardized content of the file 
+    '''
+    content = content.lower().strip()
     return content
