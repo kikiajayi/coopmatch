@@ -1,5 +1,9 @@
 # @Author: Kiki Ajayi
 
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+
 def read_file(filename):
     '''
     Reads a file and stores the content
@@ -8,7 +12,7 @@ def read_file(filename):
         filename: name of the file/path to the file
 
     Returns:
-        Content of the file in a variable
+        str: ontent of the file in a variable
     '''
     content = ""
     fn = filename.strip()
@@ -32,7 +36,27 @@ def clean_text(content):
         content: content of the file
 
     Returns:
-        Standardized content of the file 
+        str: standardized content of the file 
     '''
     content = content.lower().strip()
     return content
+
+def calculate_score(resume, job):
+    '''
+    Calculates how similar the resume is to the job qualifications
+    
+    Arg(s):
+        resume: resume read from the file 
+        job: job description read from the file
+
+    Returns:
+        float: score to show how closely resume and job description match 
+    '''
+    files = [resume, job]
+    tfidf = TfidfVectorizer()
+    result = tfidf.fit_transform(files)
+    similarity = cosine_similarity(result[0], result[1])
+    score = similarity[0][0]*100
+    return round(score, 2)
+
+
