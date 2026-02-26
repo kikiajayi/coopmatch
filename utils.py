@@ -2,7 +2,8 @@
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+import sqlite3
+from datetime import datetime
 
 def read_file(filename):
     '''
@@ -52,8 +53,7 @@ def analyse(resume, job, n = 20):
 
     Returns:
         score: numerical value (float) to show how closely resume and job description match
-        missingWords: list of key words and 
-
+        missingWords: list of misiing keywords 
     '''
     applicationWords = {"interns", "intern", "internship",
                         "co op", "co ops", "coop", "coops", 
@@ -97,5 +97,41 @@ def analyse(resume, job, n = 20):
 
     return score, missingWords
    
+def log_analysis(resume, job, score, missingWords):
+    '''
+    Calculates how similar the resume is to the job qualifications and identifies keywords that are present in job description but not resume 
+    
+    Arg(s):
+        resume: resume read from the file 
+        job: job description read from the file
+        n: number of keywords
 
+    Returns:
+        score: numerical value (float) to show how closely resume and job description match
+        missingWords: list of misiing keywords 
+    '''
+    connection = sqlite3.connect("analysis.db")
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS runs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timeCreated TEXT,
+            resume TEXT,
+            jobDesc TEXT,
+            score REAL,
+            missingWords TEXT
+        )
+    """)
+
+    timestamp = datetime.now().isoformat(timespec="seconds")
+    missing = ", ".join([word for word, _ in missingWords[:10]])
+
+    cursor.execute("""
+        INSERT INTO runs (timeCreated, resume, jobDesc, score, missingWords)
+        VALUES (?, ?, ?, ?, ?)
+    """, (timestamp, resume, job, score, missing))
+
+    connection.commit()
+    connection.close()
 
